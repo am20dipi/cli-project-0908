@@ -5,7 +5,6 @@ class CLI
     puts "Welcome to the Beer Punk"
     puts "_______________"
     puts ""
-    print_beers
     puts "To view a listing of beers please enter 'beers' or enter 'exit' to exit."
     puts ""
     #id = gets.strip.downcase.to_i
@@ -16,6 +15,7 @@ class CLI
       
       if input == "beers"
         puts ""
+        print_beers
         puts "___________________"
         puts "To view more info about a beer, enter the number of the beer."
         puts "Or enter 'exit' to exit."

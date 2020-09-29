@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'pry'
 require 'json'
 require 'HTTParty'
@@ -6,3 +8,5 @@ require 'HTTParty'
 require_relative '../lib/cli'
 require_relative '../lib/api'
 require_relative '../lib/beers'
+
+CLI.new.menu #instantiating a new instance of that class and calling the method "menu" on that instance #.new is a class method
