@@ -1,4 +1,4 @@
-class Beer
+class Beer #see all beers, or a see a specific beer & its corresponding information
   attr_accessor :name, :tagline, :description, :abv, :first_brewed, :id
   @@all = []
   
@@ -12,11 +12,11 @@ class Beer
     @@all << self
   end
   
-  def self.all
+  def self.all #return of all
     @@all
   end
   
-  def self.find_by_id(id)
+  def self.find_by_id(id) #class constructor
     self.all.select{|x| x.id == id}
   end
 end
