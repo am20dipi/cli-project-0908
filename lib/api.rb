@@ -6,8 +6,8 @@ class API
     response=Net::HTTP.get(uri)
     
     beers=JSON.parse(response)["beers"].each do |b|
-      Beer.new(name: b["name"], id: b["id"], description: b["description"], tagline: b["tagline"], abv: b["abv"]) if b["name"] != nil
-    # to turn it into something the user can consumer
+      Beer.new(name: b["name"], id: b["id"]) if b["name"] != nil
+    # .parse = to turn it into something the user can consumer
     end
     binding.pry
   end
@@ -20,3 +20,5 @@ class API
     
   end
 end
+
+#description: b["description"], tagline: b["tagline"], abv: b["abv"]

@@ -1,6 +1,6 @@
 require 'pry'
 require 'json'
-require 'HTTPparty'
+require 'httparty'
 
 
 require_relative '../lib/cli'
