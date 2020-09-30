@@ -1,6 +1,6 @@
 class API 
   
-  def self.get_beers
+  def self.get_beers(beers)
     #binding.pry
     url= "https://api.punkapi.com/v2/beers"
     uri = URI(url)

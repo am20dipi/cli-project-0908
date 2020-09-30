@@ -8,9 +8,8 @@ class CLI
     puts "Or enter 'exit' to exit."
     puts ""
     beers = Beer.all
-    #API.get_beers
     input = gets.strip.downcase
-    API.get_beers
+    API.get_beers(input)
     
     until input == "exit"
       input = gets.strip.downcase
