@@ -29,10 +29,10 @@ class CLI
         puts "Or enter 'exit' to exit."
       elsif input == "exit"
         puts ""
-        puts "______________________________"
+        puts "_____________________________________________"
         puts ""
         puts "Thank you for using Beer Punk! Cheers! Clink!"
-        puts "______________________________"
+        puts "_____________________________________________"
       else
         puts ""
         puts "___________________"

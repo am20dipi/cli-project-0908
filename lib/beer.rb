@@ -2,7 +2,7 @@ class Beer #see all beers, or a see a specific beer & its corresponding informat
   attr_accessor :name, :id
   @@all = []
   
-  def initialize(name: nil, id: nil)
+  def initialize(name:, id:)
     @name = name
     @id = id
     @@all << self
