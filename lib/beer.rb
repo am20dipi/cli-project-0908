@@ -21,4 +21,7 @@ class Beer #see all beers, or a see a specific beer & its corresponding informat
   end
 end
 
+
+
+#testing commit
 #attributes.each {|key, value| self.send("#{key}=", value)}
