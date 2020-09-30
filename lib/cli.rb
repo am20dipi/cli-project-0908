@@ -5,10 +5,10 @@ class CLI
     puts "Welcome to the Beer Punk"
     puts "_______________"
     puts ""
-    puts "To view a listing of beers please enter 'beers' or enter 'exit' to exit."
+    puts "To view a delectable listing of beers please enter 'beers' or enter 'exit' to exit."
     puts ""
-    #id = gets.strip.downcase.to_i
-    #API.getbeer(id)
+    @id = gets.strip.downcase.to_i
+    API.getbeer(id)
     
     until input == "exit"
       input = gets.strip.downcase
@@ -28,7 +28,7 @@ class CLI
       elsif input == "exit"
         puts ""
         puts "___________________"
-        puts "Thank you for using Beer Punk! Cheers!"
+        puts "Thank you for using Beer Punk! Cheers! Clink!"
         puts "___________________"
       else
         puts ""
