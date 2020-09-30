@@ -4,7 +4,8 @@ class CLI
     puts "Welcome to the Beer Punk"
     puts "_________________________"
     puts ""
-    puts "To view a delectable listing of beers, please enter 'beers' or enter 'exit' to exit."
+    puts "To view a delectable listing of beers, please enter 'beers'." 
+    puts "Or enter 'exit' to exit."
     puts ""
     beers = Beer.all
     input = gets.strip.downcase
