@@ -19,21 +19,17 @@ class CLI
         puts "To view more info about a beer, enter the number of the beer."
         puts "Or enter 'exit' to exit."
         puts ""
-      else 
-        puts "To view a delectable listing of beers, please enter 'beers' or enter 'exit' to exit."
-        puts ""
-      end
-    end
         
-      if input.to_i > 0 && input.to_i <= Beer.all.length
+      elsif input.to_i > 0 && input.to_i <= Beer.all.length
         beer_info(input)
-        puts "To learn about a different beer, enter the number of the beer."
+        puts "To view more info about a beer, enter the number of the beer."
         puts "Or enter 'exit' to exit."
       elsif input == "exit"
         puts ""
-        puts "___________________"
+        puts "______________________________"
+        puts ""
         puts "Thank you for using Beer Punk! Cheers! Clink!"
-        puts "___________________"
+        puts "______________________________"
       else
         puts ""
         puts "___________________"
@@ -41,9 +37,9 @@ class CLI
         puts "Or enter 'exit' to exit."
         puts ""
       end
-    
+    end
       
-  
+  end
   
   def print_beers
     Beer.all.each.with_index(1) do |b, i|
@@ -51,5 +47,6 @@ class CLI
     end
   end
   
-end 
+  
+end
     
