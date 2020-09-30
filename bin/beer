@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
-
+require_relative '../config/environment'
 
 CLI.new.menu #instantiating a new instance of that class and calling the method "menu" on that instance #.new is a class method
 
 
-require_relative '../config/environment'
