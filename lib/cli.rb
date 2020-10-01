@@ -5,9 +5,7 @@ class CLI
     puts "Welcome to the Beer Punk"
     puts "_________________________"
     puts ""
-    puts "To view a delectable listing of beers, please enter 'beers'." 
-    puts "Or enter 'exit' to exit."
-    puts ""
+    prompt_two
     input = gets.strip.downcase
     while input != 'exit' do
       if input == 'beers'
@@ -16,32 +14,26 @@ class CLI
         puts "___________________"
         prompt
         input = gets.strip.to_i
-        while input != 'exit' do
+        while input != 'back' do
           if input.to_i > 0 && input.to_i <= Beer.all.length
             binding.pry
-            beer = Beer.find_by_id(@id)[input.to_i-1]
-            API.get_beers(beer) if !beer.name
-            print_beer
+            beer = Beer.all[input.to_i-1]
+            print_beer(beer)
           else
             puts ""
-            puts "Sorry, I do not understand. Please enter a number." 
-            puts "Or enter 'exit' to exit."
+            puts "Sorry, I do not understand." 
             puts ""
           end
+          puts "Please enter a number or enter 'back' to go back to main menu."
           input = gets.strip.downcase
         end
-        puts ""
-        puts "_____________________________________________"
-        puts ""
-        puts "Thank you for using Beer Punk! Cheers! Clink!"
-        puts "_____________________________________________"
       else
         puts ""
         puts "___________________"
-        puts "Sorry, I do not understand. Please enter 'beers' to view our listing." 
-        puts "Or enter 'exit' to exit."
+        puts "Sorry, I do not understand." 
         puts ""
       end
+      prompt_two
       input = gets.strip.downcase
     end
     puts ""
@@ -57,6 +49,14 @@ class CLI
     puts "Or enter 'exit' to exit."
     puts ""
   end
+  
+  def prompt_two
+    puts ""
+    puts "To view a delectable listing of beers, please enter 'beers'." 
+    puts "Or enter 'exit' to exit."
+    puts ""
+  end
+    
           
   
   def print_beers
@@ -65,7 +65,7 @@ class CLI
     end
   end
   
-  def print_beer
+  def print_beer(beer)
     puts "name: #{beer.name}"
     puts "tagline: #{beer.tagline}"
     puts "description: #{beer.description}"
