@@ -2,13 +2,13 @@ class Beer #see all beers, or a see a specific beer & its corresponding informat
   attr_accessor :name, :id, :tagline, :description, :abv, :first_brewed
   @@all = []
   
-  def initialize(name:, id:, tagline:, description:, abv:, first_brewed:)
-    @name = name
-    @id = id
-    @tagline = tagline
-    @description = description
-    @abv = abv
-    @first_brewed = first_brewed
+  def initialize(attribute_hash)
+    @name = attribute_hash[:name]
+    @id = attribute_hash[:id]
+    #@tagline = attribute_hash[:tagline]
+    #@description = attribute_hash[:description]
+    #@abv = attribute_hash[:abv]
+    #@first_brewed = attribute_hash[:first_brewed]
     @@all << self
   end
   

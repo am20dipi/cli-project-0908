@@ -16,6 +16,11 @@ class CLI
         puts "___________________"
         puts prompt
         puts ""
+          if input.to_i > 0 && input.to_i <= Beer.all.length
+            beer = Beer.find_by_id{@id}[input.to_i-1]
+            API.get_beers
+          end
+        puts ""
       else
         puts ""
         puts "___________________"
@@ -45,5 +50,5 @@ class CLI
       puts "#{i}. #{b.name}"
     end
   end
-
-    
+  
+end
