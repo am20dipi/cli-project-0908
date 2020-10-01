@@ -18,9 +18,10 @@ class CLI
         input = gets.strip.to_i
         while input != 'exit' do
           if input.to_i > 0 && input.to_i <= Beer.all.length
-            beer_info = Beer.find_by_id(@id)[input.to_i-1]
-            API.get_beers if !beer.name
-            print_1_beer
+            binding.pry
+            beer = Beer.find_by_id(@id)[input.to_i-1]
+            API.get_beers(beer) if !beer.name
+            print_beer
           else
             puts ""
             puts "Sorry, I do not understand. Please enter a number." 
@@ -64,7 +65,7 @@ class CLI
     end
   end
   
-  def print_1_beer
+  def print_beer
     puts "name: #{beer.name}"
     puts "tagline: #{beer.tagline}"
     puts "description: #{beer.description}"
