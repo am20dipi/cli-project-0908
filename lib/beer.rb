@@ -5,10 +5,10 @@ class Beer #see all beers, or a see a specific beer & its corresponding informat
   def initialize(attribute_hash)
     @name = attribute_hash[:name]
     @id = attribute_hash[:id]
-    #@tagline = attribute_hash[:tagline]
-    #@description = attribute_hash[:description]
-    #@abv = attribute_hash[:abv]
-    #@first_brewed = attribute_hash[:first_brewed]
+    @tagline = attribute_hash[:tagline]
+    @description = attribute_hash[:description]
+    @abv = attribute_hash[:abv]
+    @first_brewed = attribute_hash[:first_brewed]
     @@all << self
   end
   

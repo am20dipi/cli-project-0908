@@ -8,12 +8,15 @@ class CLI
     puts "To view a delectable listing of beers, please enter 'beers'." 
     puts "Or enter 'exit' to exit."
     puts ""
+    @id = gets.strip.to_i
+    API.get_beers(@id)
     input = gets.strip.downcase
-    while input != "exit" do
-      if input == "beers"
+    while input != 'exit' do
+      if input == 'beers'
         puts ""
         print_beers
         puts "___________________"
+        prompt
         puts ""
       else
         puts ""
@@ -22,7 +25,6 @@ class CLI
         puts "Or enter 'exit' to exit."
         puts ""
       end
-      prompt
     end
     puts ""
     puts "_____________________________________________"
@@ -33,7 +35,7 @@ class CLI
   
   def prompt 
     puts "" 
-    puts "To view more info about a beer, enter the corresponding number of the beer."
+    puts "To learn more info about a specific beer, enter the corresponding number of the beer."
     puts "Or enter 'exit' to exit."
     puts ""
   end
@@ -53,7 +55,11 @@ class CLI
   end
   
   def print_1_beer(beer)
-    puts beer.name
+    puts "Name: #{beer.name}"
+    puts "Tagline: #{beer.tagline}"
+    puts "Description: #{beer.description}"
+    puts "Abv: #{beer.abv}"
+    puts "First_brewed: #{beer.first_brewed}"
   end
   
     
