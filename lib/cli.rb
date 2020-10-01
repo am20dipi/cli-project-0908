@@ -14,7 +14,7 @@ class CLI
         puts ""
         print_beers
         puts "___________________"
-        puts prompt
+        prompt
         puts ""
       else
         puts ""
@@ -23,6 +23,8 @@ class CLI
         puts "Or enter 'exit' to exit."
         puts ""
       end
+      prompt_2
+      input = gets.strip.to_i
     end
     puts ""
     puts "_____________________________________________"
@@ -37,7 +39,12 @@ class CLI
     puts "Or enter 'exit' to exit."
     puts ""
   end
-      
+  
+  def prompt_2
+    puts ""
+    puts "To learn more about a specific beer, please enter the corresponding number! "
+    puts ""
+  end
           
   
   def print_beers
@@ -46,9 +53,7 @@ class CLI
     end
   end
   
-  def print_1_beer
-    Beer.all.select {|b| b.id == id}
-  end
+  
     
   
 end
