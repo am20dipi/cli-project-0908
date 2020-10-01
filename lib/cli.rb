@@ -8,8 +8,6 @@ class CLI
     puts "To view a delectable listing of beers, please enter 'beers'." 
     puts "Or enter 'exit' to exit."
     puts ""
-    @id = gets.strip.to_i
-    API.get_beers(@id)
     input = gets.strip.downcase
     while input != 'exit' do
       if input == 'beers'
@@ -17,7 +15,23 @@ class CLI
         print_beers
         puts "___________________"
         prompt
+        input = gets.strip.to_i
+        while input != 'exit' do
+          if input.to_i > 0 && input.to_i <= Beer.all.length
+            beer = Beer.find_by_id(input)
+            print_1_beer
+          else
+            puts ""
+            puts "Sorry, I do not understand. Please enter 'beers' to view our listing." 
+            puts "Or enter 'exit' to exit."
+            puts ""
+          end
+        end
         puts ""
+        puts "_____________________________________________"
+        puts ""
+        puts "Thank you for using Beer Punk! Cheers! Clink!"
+        puts "_____________________________________________"
       else
         puts ""
         puts "___________________"
