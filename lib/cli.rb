@@ -16,21 +16,23 @@ class CLI
         input = gets.strip.to_i
         while input != 'back' do
           if input.to_i > 0 && input.to_i <= Beer.all.length
-            binding.pry
             beer = Beer.all[input.to_i-1]
             print_beer(beer)
           else
             puts ""
-            puts "Sorry, I do not understand." 
+            puts "Sorry, I do not understand.(inner loop)" 
             puts ""
           end
+          puts ""
+          puts "______________________________________________________________"
           puts "Please enter a number or enter 'back' to go back to main menu."
+          puts "______________________________________________________________"
           input = gets.strip.downcase
         end
       else
         puts ""
         puts "___________________"
-        puts "Sorry, I do not understand." 
+        puts "Sorry, I do not understand.(outer loop)" 
         puts ""
       end
       prompt_two
