@@ -14,11 +14,6 @@ class CLI
         puts ""
         print_beers
         puts "___________________"
-        prompt
-        input = gets.strip.to_i
-          while input.to_i > 0 && input.to_i <= Beer.all.length do
-            print_1_beer
-          end
         puts ""
       else
         puts ""
@@ -27,7 +22,7 @@ class CLI
         puts "Or enter 'exit' to exit."
         puts ""
       end
-      prompt_2
+      prompt
     end
     puts ""
     puts "_____________________________________________"
@@ -38,7 +33,7 @@ class CLI
   
   def prompt 
     puts "" 
-    puts "To view more info about a beer, enter the number of the beer."
+    puts "To view more info about a beer, enter the corresponding number of the beer."
     puts "Or enter 'exit' to exit."
     puts ""
   end
@@ -57,8 +52,8 @@ class CLI
     end
   end
   
-  def print_1_beer
-    Beer.all.select {|b| b.id == id}
+  def print_1_beer(beer)
+    puts beer.name
   end
   
     
