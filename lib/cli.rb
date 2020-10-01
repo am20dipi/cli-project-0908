@@ -1,5 +1,6 @@
 class CLI
   def menu
+    API.get_beers
     puts ""
     puts "Welcome to the Beer Punk"
     puts "_________________________"
@@ -7,21 +8,14 @@ class CLI
     puts "To view a delectable listing of beers, please enter 'beers'." 
     puts "Or enter 'exit' to exit."
     puts ""
-    beers = Beer.all
     input = gets.strip.downcase
-    API.get_beers(input)
+    while input != "exit" do
       if input == "beers"
         puts ""
         print_beers
         puts "___________________"
         puts prompt
         puts ""
-      elsif input == "exit"
-        puts ""
-        puts "_____________________________________________"
-        puts ""
-        puts "Thank you for using Beer Punk! Cheers! Clink!"
-        puts "_____________________________________________"
       else
         puts ""
         puts "___________________"
@@ -30,7 +24,11 @@ class CLI
         puts ""
       end
     end
-      
+    puts ""
+    puts "_____________________________________________"
+    puts ""
+    puts "Thank you for using Beer Punk! Cheers! Clink!"
+    puts "_____________________________________________"
   end
   
   def prompt 
