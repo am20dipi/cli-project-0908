@@ -18,14 +18,16 @@ class CLI
         input = gets.strip.to_i
         while input != 'exit' do
           if input.to_i > 0 && input.to_i <= Beer.all.length
-            beer = Beer.find_by_id(input)
+            beer_info = Beer.find_by_id(@id)[input.to_i-1]
+            API.get_beers if !beer.name
             print_1_beer
           else
             puts ""
-            puts "Sorry, I do not understand. Please enter 'beers' to view our listing." 
+            puts "Sorry, I do not understand. Please enter a number." 
             puts "Or enter 'exit' to exit."
             puts ""
           end
+          input = gets.strip.downcase
         end
         puts ""
         puts "_____________________________________________"
@@ -39,6 +41,7 @@ class CLI
         puts "Or enter 'exit' to exit."
         puts ""
       end
+      input = gets.strip.downcase
     end
     puts ""
     puts "_____________________________________________"
@@ -50,13 +53,6 @@ class CLI
   def prompt 
     puts "" 
     puts "To learn more info about a specific beer, enter the corresponding number of the beer."
-    puts "Or enter 'exit' to exit."
-    puts ""
-  end
-  
-  def prompt_2
-    puts ""
-    puts "To return to our beer list, please enter 'beers'."
     puts "Or enter 'exit' to exit."
     puts ""
   end
