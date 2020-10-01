@@ -1,5 +1,5 @@
 class Beer #see all beers, or a see a specific beer & its corresponding information
-  attr_accessor :name, :id
+  attr_accessor :name, :id, :tagline, :description, :abv, :first_brewed
   @@all = []
   
   def initialize(name:, id:)
