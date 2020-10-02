@@ -27,13 +27,15 @@ class CLI
           end
           puts ""
           puts "______________________________________________________________"
+          puts ""
           puts "Please enter a number or enter 'back' to go back to main menu."
           puts "______________________________________________________________"
           input = gets.strip.downcase
         end
       else
         puts ""
-        puts "___________________"
+        puts "_______________________________________"
+        puts ""
         puts "Sorry, I do not understand.(outer loop)" 
         puts ""
       end
