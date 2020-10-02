@@ -13,12 +13,14 @@ class CLI
         print_beers
         puts "___________________"
         prompt
-        input = gets.strip.to_i
-        while input != 'back' do
+        input = gets.strip.downcase
+        #binding.pry
+        while input != 'back' && input != 'exit' do 
           if input.to_i > 0 && input.to_i <= Beer.all.length
             beer = Beer.all[input.to_i-1]
             print_beer(beer)
           else
+            #binding.pry
             puts ""
             puts "Sorry, I do not understand.(inner loop)" 
             puts ""
