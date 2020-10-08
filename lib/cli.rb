@@ -59,8 +59,6 @@ class CLI
     puts "Or enter 'exit!' to exit."
     puts ""
   end
-    
-          
   
   def print_beers
     Beer.all.each.with_index(1) do |b, i|
@@ -79,7 +77,5 @@ class CLI
     puts""
     puts "First Brewed: #{beer.first_brewed}"
   end
-  
-    
   
 end

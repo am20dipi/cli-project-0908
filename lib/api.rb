@@ -10,7 +10,5 @@ class API
       Beer.new(name: b["name"], id: b["id"], tagline: b["tagline"], description: b["description"], abv: b["abv"], first_brewed: b["first_brewed"] ) if b["id"] != nil
     end
   end
-
-  
 end
 
